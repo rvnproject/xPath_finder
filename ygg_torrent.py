@@ -4,7 +4,7 @@ from lxml import html
 
 books_to_search = 'medicine'
 
-#yggTorrent Search
+# yggTorrent Search
 def yggtorrent(book):
     playload = {
         "name": book,
@@ -21,4 +21,6 @@ def yggtorrent(book):
     ygg_list = list(tree_yggtorrent.xpath("*//section[contains(@id, '#torrent')]/div//tbody/tr/td[2]//@href"))
     return ygg_list
 
-pprint(yggtorrent(books_to_search))
+torrent_list = yggtorrent(books_to_search)
+pprint(torrent_list)
+print(len(torrent_list))
